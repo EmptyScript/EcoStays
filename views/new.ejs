@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+    <br>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3>Create a New listing</h3>
+            <br>
+    <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+        <label class="form-label">Title:</label>
+        <input class="form-control" type="text" name="listing[title]" placeholder="Paradise Villa" required>
+        <div class="valid-feedback">Title looks Good</div>
+        </div >
+        
+        <div class="mb-3">
+        <label class="form-label">Description:</label>
+        <input class="form-control" type="text" name="listing[description]" placeholder="Villa by beach, for bitches" required>
+        <div class="invalid-feedback">Please enter a valid Description!</div>
+        </div>
+        <div class="mb-3">
+        <label class="form-label">Upload Listing Image:</label>
+        <input class="form-control" type="file" name="listing[image][url]" placeholder="Enter Img URL/Link">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category:</label>
+                <select class="form-select" name="listing[category]" id="category">
+                <option value="">Select a category</option>
+                <option value="Haunted House">Haunted House</option>
+                <option value="Arctic">Arctic</option>
+                <option value="Resorts">Resorts</option>
+                <option value="Castles">Castles</option>
+                <option value="House-boats">House-boats</option>
+                <option value="Dorms">Dorms</option>
+                <option value="Mountain-View">Mountain-View</option>
+                <option value="Camping">Camping</option>
+                <option value="Pools">Pools</option>
+                <option value="Palace">Palace</option>
+                <option value="Sea-view">Sea-view</option>
+                <option value="Villa">Villa</option>
+                <option value="Rooms">Rooms</option>
+            </select>
+  </div>
+        <div class="row">
+        <div class="mb-3 col-4">
+        <label class="form-label">Price:</label>
+        <input class="form-control" type="text" name="listing[price]" placeholder="6000" required >
+        <div class="invalid-feedback">Please enter Price!</div>
+        </div>
+        
+        <div class="mb-3 col-8">
+        <label class="form-label">Location:</label>
+        <input class="form-control"type="text" name="listing[location]" placeholder="Jaipur" required>
+        <div class="invalid-feedback">Please enter a valid Location!</div>
+        </div>
+        
+    </div>
+        <div class="mb-3">
+        <label class="form-label">Country:</label>
+        <input class="form-control" type="text" name="listing[country]" placeholder="India" required>
+        <div class="invalid-feedback">Please enter a valid Country!</div>
+        </div>
+        <br>
+        <input type="submit" class="btn btn-dark add-btn" value="Add Listing">
+    </form>
+        </div>
+    </div>
+    <br>
+</body>
+
