@@ -7,18 +7,12 @@ const listing = require("../models/listing");
 const Review = require("../models/review");
 const {isLoggedIn, isAuthor}  = require("../middleware")
 const { createReviewListing, deleteReview } = require("../controllers/review")
-const validateReview = (req,res,next)=> {
-    let {error} = listingSchema.validate(req.body);
-    if(error){
-        throw new ExpressError(404, error)
-    }
-    next();
-}
+const {validateReview} = require("../middleware")
 
 //Create review
-router.post("/", isLoggedIn , wrapAsync(createReviewListing))
+router.post("/", isLoggedIn , validateReview, wrapAsync(createReviewListing))
 
 //Delete Review
-router.delete("/:reviewid", isAuthor , wrapAsync(deleteReview))
+router.delete("/:reviewid", isAuthor ,  wrapAsync(deleteReview))
 
 module.exports = router

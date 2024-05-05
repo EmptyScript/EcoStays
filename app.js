@@ -8,11 +8,12 @@ const listing = require("../project/models/listing");
 const Review = require("../project/models/review");
 const path = require("path")
 const methodOverride = require("method-override")
+const dns = require('dns');
 const ejsMate = require("ejs-mate")
 app.engine("ejs", ejsMate)
 const wrapAsync = require("./utils/wrapAsync")
 const ExpressError = require("./utils/ExpressError")
-const {listingSchema, reviewSchema}= require("./schema")
+const {listingSchema, reviewSchema , userSchema}= require("./schema")
 const listingRouter = require("./routes/listing.js")
 const reviewRouter = require("./routes/review.js")
 const cookieParser = require("cookie-parser")
@@ -81,22 +82,6 @@ app.use((req,res,next)=> {
 })
 
 
-
-const validateListing = (req,res,next)=> {
-    let {error} = listingSchema.validate(req.body);
-    if(error){
-        throw new ExpressError(404, error)
-    }
-    next();
-}
-
-const validateReview = (req,res,next)=> {
-    let {error} = reviewSchema.validate(req.body);
-    if(error){
-        throw new ExpressError(404, error)
-    }
-    next();
-}
 
 
 // app.get("/", (req,res)=> {

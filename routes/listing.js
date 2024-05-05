@@ -9,17 +9,11 @@ const {index, renderNewForm , createListing , showListing, renderEditForm , edit
 const multer  = require('multer')
 const {storage} = require("../cloudConfig.js")
 const upload = multer({ storage})
-const validateListing = (req,res,next)=> {
-    let {error} = listingSchema.validate(req.body);
-    if(error){
-        throw new ExpressError(404, error)
-    }
-    next();
-}
+const {validateListing} = require("../middleware")
 
 router.route("/")
 .get(wrapAsync(index))  //index
-.post( isLoggedIn , validateListing, upload.single('listing[image][url]') , wrapAsync(createListing)) //create route 
+.post( isLoggedIn , upload.single('listing[image][url]') , validateListing , wrapAsync(createListing)) //create route 
 
 
 
@@ -32,10 +26,10 @@ router.get("/new", isLoggedIn, wrapAsync(renderNewForm)
 
 router.route("/:id")
 .get( wrapAsync(showListing)) //show route
-.put( isLoggedIn , isOwner , upload.single('listing[image][url]') , wrapAsync( editListing)) //edit route
-.delete( isLoggedIn, isOwner, wrapAsync(deleteListing)) ///edit route
+.put( isLoggedIn , isOwner , upload.single('listing[image][url]') , validateListing, wrapAsync( editListing)) //edit route
+.delete( isLoggedIn, isOwner, wrapAsync(deleteListing)) ///del route
 
-//edit route
+//edit route form
 router.get("/:id/edit", isLoggedIn , isOwner , wrapAsync(renderEditForm))
 
 

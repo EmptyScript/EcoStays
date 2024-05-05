@@ -132,3 +132,7 @@ body {
     color: #fff;
   }
 
+  .required {
+    color: red; /* Change the color of the asterisk */
+    margin-left: 5px; /* Add some space between the label and the asterisk */
+}

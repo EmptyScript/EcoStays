@@ -65,10 +65,10 @@ module.exports.renderEditForm  = async (req,res)=>{
     let {id} = req.params;
     const listings = await listing.findById(id);
     let originalImageUrl = listings.image.url
-    originalImageUrl = originalImageUrl.replace("/upload", "/upload/h_100,w_100")
-    res.render("edit.ejs",{listings, originalImageUrl})
+    transformedImageUrl = originalImageUrl.replace("/upload", "/upload/h_100,w_100")
+    res.render("edit.ejs",{listings, originalImageUrl, transformedImageUrl})
 }
-
+ 
 module.exports.editListing = async(req,res)=> {
     let {id} = req.params;
     let filename = req.file.filename

@@ -1,5 +1,8 @@
 const listing = require("./models/listing")
 const Review = require("./models/review")
+const {userSchema, reviewSchema, listingSchema} = require("./schema")
+const dns = require("dns");
+const ExpressError = require("./utils/ExpressError")
 module.exports.isLoggedIn = (req,res,next) => {
     if(!req.isAuthenticated()){
         req.session.redirectUrl = req.originalUrl
@@ -35,3 +38,40 @@ module.exports.isAuthor = async ( req,res,next) => {
     }
     next()
 }
+
+
+module.exports.validateListing = (req,res,next)=> {
+    let {error} = listingSchema.validate(req.body);
+    if(error){
+        throw new ExpressError(404, error)
+    }
+    next();
+}
+
+module.exports.validateReview = (req,res,next)=> {
+    let {error} = reviewSchema.validate(req.body);
+    if(error){
+        throw new ExpressError(404, error)
+    }
+    next();
+}
+
+module.exports.validateSignup = (req, res, next) => {
+    const { error } = userSchema.validate(req.body);
+    if (error) {
+        throw new ExpressError(404, error)
+    }
+    next();
+};
+
+module.exports.isValidDomain = async (req, res, next) => {
+    const { email } = req.body;
+    const [, domain] = email.split('@');
+    try {
+        await dns.promises.resolveMx(domain);
+        next(); // Domain has MX records, proceed to next middleware or route handler
+    } catch (error) {
+        console.error(error); // Log the error for debugging
+        throw new ExpressError(404, error);
+    }
+};

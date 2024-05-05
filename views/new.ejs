@@ -8,22 +8,22 @@
             <br>
     <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
         <div class="mb-3">
-        <label class="form-label">Title:</label>
+        <label class="form-label">Title:  <span class="required">*</label>
         <input class="form-control" type="text" name="listing[title]" placeholder="Paradise Villa" required>
         <div class="valid-feedback">Title looks Good</div>
         </div >
         
         <div class="mb-3">
-        <label class="form-label">Description:</label>
+        <label class="form-label">Description: <span class="required">*</label>
         <input class="form-control" type="text" name="listing[description]" placeholder="Villa by beach, for bitches" required>
         <div class="invalid-feedback">Please enter a valid Description!</div>
         </div>
         <div class="mb-3">
-        <label class="form-label">Upload Listing Image:</label>
+        <label class="form-label">Upload Listing Image: <span class="required">*</label>
         <input class="form-control" type="file" name="listing[image][url]" placeholder="Enter Img URL/Link">
         </div>
         <div class="mb-3">
-            <label class="form-label">Category:</label>
+            <label class="form-label">Category: <span class="required">*</label>
                 <select class="form-select" name="listing[category]" id="category">
                 <option value="">Select a category</option>
                 <option value="Haunted House">Haunted House</option>
@@ -43,20 +43,20 @@
   </div>
         <div class="row">
         <div class="mb-3 col-4">
-        <label class="form-label">Price:</label>
+        <label class="form-label">Price: <span class="required">*</label>
         <input class="form-control" type="text" name="listing[price]" placeholder="6000" required >
         <div class="invalid-feedback">Please enter Price!</div>
         </div>
         
         <div class="mb-3 col-8">
-        <label class="form-label">Location:</label>
+        <label class="form-label">Location: <span class="required">*</label>
         <input class="form-control"type="text" name="listing[location]" placeholder="Jaipur" required>
         <div class="invalid-feedback">Please enter a valid Location!</div>
         </div>
         
     </div>
         <div class="mb-3">
-        <label class="form-label">Country:</label>
+        <label class="form-label">Country: <span class="required">*</label>
         <input class="form-control" type="text" name="listing[country]" placeholder="India" required>
         <div class="invalid-feedback">Please enter a valid Country!</div>
         </div>
