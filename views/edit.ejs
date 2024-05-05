@@ -46,3 +46,12 @@
         </div>
     </div>
 </body>
+<script>
+    window.onload = function() {
+        // Retrieve the original file path
+        var originalImagePath = "<%= originalImageUrl %>";
+
+        // Set the value of the file input field to the original file path
+        document.querySelector('input[type="file"]').value = originalImagePath;
+    };
+</script>
