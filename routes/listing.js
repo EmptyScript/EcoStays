@@ -19,7 +19,7 @@ const validateListing = (req,res,next)=> {
 
 router.route("/")
 .get(wrapAsync(index))  //index
-.post( isLoggedIn , upload.single('listing[image][url]') , wrapAsync(createListing)) //create route 
+.post( isLoggedIn , validateListing, upload.single('listing[image][url]') , wrapAsync(createListing)) //create route 
 
 
 

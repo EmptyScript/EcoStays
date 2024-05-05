@@ -11,7 +11,7 @@ const listingSchema = Joi.object({
     }).required()
 })
 
-module.exports = listingSchema
+
 
 module.exports.reviewSchema = Joi.object({
     review : Joi.object({
@@ -19,3 +19,8 @@ module.exports.reviewSchema = Joi.object({
         comment : Joi.string().required()   
     })
 })
+
+module.exports = {
+    listingSchema,
+    reviewSchema
+}

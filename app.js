@@ -1,8 +1,6 @@
 if(process.env.NODE_ENV != "production"){
     require("dotenv").config()
 }
-
-
 const express = require('express');
 const app=express();
 const mongoose = require("mongoose");
@@ -30,6 +28,7 @@ const main = async()=> {
     await mongoose.connect(dbUrl)
 }
 app.use(cookieParser())
+const Joi = require('joi')
 app.use(methodOverride("_method"))
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname,"views"))
@@ -92,7 +91,7 @@ const validateListing = (req,res,next)=> {
 }
 
 const validateReview = (req,res,next)=> {
-    let {error} = listingSchema.validate(req.body);
+    let {error} = reviewSchema.validate(req.body);
     if(error){
         throw new ExpressError(404, error)
     }
