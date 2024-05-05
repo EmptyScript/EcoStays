@@ -1,6 +1,5 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
-
   <style>
     .filter {
       margin-top: 10px;
@@ -24,96 +23,97 @@
       color: black;
     }
   </style>
-    <div  class="container fluid">
-      <div class="row">
-            <div id="filters" class="col">
-              <div class="filter">
-                <a href="/listings">
-                  <i class="fa-solid fa-fire"></i>
-                  <p>Trending</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Rooms">
-                  <i class="fa-solid fa-couch"></i>
-                  <p>Rooms</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Villa">
-                  <i class="fa-solid fa-bell-concierge"></i>
-                  <p>Villa</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Sea-view">
-                  <i class="fa-solid fa-umbrella-beach"></i>
-                  <p>Sea-view</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Palace">
-                  <i class="fa-solid fa-place-of-worship"></i>
-                  <p>Palace</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Pools">
-                  <i class="fa-solid fa-person-swimming"></i>
-                  <p>Pools</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Camping">
-                  <i class="fa-solid fa-tent"></i>
-                  <p>Camping</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Mountain-View">
-                  <i class="fa-solid fa-mountain-sun"></i>
-                  <p>Mountain-View</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Dorms">
-                  <i class="fa-solid fa-door-open"></i>
-                  <p>Dorms</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=House-boats">
-                  <i class="fa-solid fa-sailboat"></i>
-                  <p>House-boats</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Castles">
-                  <i class="fa-brands fa-fort-awesome"></i>
-                  <p>Castles</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Resorts">
-                  <i class="fa-solid fa-hotel"></i>
-                  <p>Resorts</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Arctic">
-                  <i class="fa-solid fa-person-snowboarding"></i>
-                  <p>Arctic</p>
-                </a>
-              </div>
-              <div class="filter">
-                <a href="/listings?category=Haunted House">
-                  <i class="fa-solid fa-ghost"></i>
-                  <p>Haunted House</p>
-                </a>
-              </div>
+  <div  class="container fluid">
+    <div class="row">
+          <div id="filters" class="col">
+            <div class="filter">
+              <a href="/listings">
+                <i class="fa-solid fa-fire"></i>
+                <p>Trending</p>
+              </a>
             </div>
-      </div>
+            <div class="filter">
+              <a href="/listings?category=Rooms">
+                <i class="fa-solid fa-couch"></i>
+                <p>Rooms</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Villa">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <p>Villa</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Sea-view">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <p>Sea-view</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Palace">
+                <i class="fa-solid fa-place-of-worship"></i>
+                <p>Palace</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Pools">
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Pools</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Camping">
+                <i class="fa-solid fa-tent"></i>
+                <p>Camping</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Mountain-View">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <p>Mountain-View</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Dorms">
+                <i class="fa-solid fa-door-open"></i>
+                <p>Dorms</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=House-boats">
+                <i class="fa-solid fa-sailboat"></i>
+                <p>House-boats</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Castles">
+                <i class="fa-brands fa-fort-awesome"></i>
+                <p>Castles</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Resorts">
+                <i class="fa-solid fa-hotel"></i>
+                <p>Resorts</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Arctic">
+                <i class="fa-solid fa-person-snowboarding"></i>
+                <p>Arctic</p>
+              </a>
+            </div>
+            <div class="filter">
+              <a href="/listings?category=Haunted House">
+                <i class="fa-solid fa-ghost"></i>
+                <p>Haunted House</p>
+              </a>
+            </div>
+          </div>
     </div>
+  </div>
+
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for(let listing of alllistings) { %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
@@ -133,39 +133,6 @@
     </div>
 </body>
 
-    <script>
-        // Add event listener to the filters container
-        document.getElementById('filters').addEventListener('click', function(event) {
-            if (event.target.matches('.filter')) {
-                // If the clicked element is a filter
-                const filterText = event.target.querySelector('p').textContent;
 
-                // Send data to backend
-                sendDataToBackend(filterText);
-            }
-        });
 
-        function sendDataToBackend(filterText) {
-            // Send filter data to backend using Fetch API
-            fetch('/listings/test', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ filter: filterText })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Response from server:', data);
-                // Handle response from server if needed
-            })
-            .catch(error => {
-                console.error('There was a problem with your fetch operation:', error);
-            });
-        }
-    </script>
+

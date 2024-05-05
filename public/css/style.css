@@ -3,6 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
 }
 
 .navbar {
@@ -72,6 +73,11 @@ body {
     object-fit: cover;
     
 } 
+.map-img-top {
+    width: 100% !important;
+    object-fit: cover;
+    
+} 
 
 .card-body {
     padding: 0 !important;
@@ -114,8 +120,8 @@ body {
 
 /* Map  */
 #map {
-    height: 400px;
-    width: 80vh;
+    height: 200px;
+    width: 40vh;
 }
 .form-inline .form-control,
 .form-inline .btn {
