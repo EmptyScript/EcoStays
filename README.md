@@ -16,9 +16,11 @@ Check out the [demo](https://ecostays.onrender.com/) to see EcoStays in action!
 
 ## Screenshots
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
-![Screenshot 3](/path/to/screenshot3.png)
+![Screenshot 1](![image](https://github.com/EmptyScript/EcoStays/assets/102405103/eeb81d3d-3501-48d6-ab1b-c3b65384453f)
+)
+![Screenshot 2](![image](https://github.com/EmptyScript/EcoStays/assets/102405103/8fcddb46-87e1-47d6-b33b-f6a5a82b5f40)
+)
+
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript
