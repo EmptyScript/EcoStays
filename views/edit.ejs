@@ -23,6 +23,26 @@
         <input class="form-control" value="<%= originalImageUrl %>"type="file" name="listing[image][url]" placeholder="Enter Img URL/Link" required>
         <div class="invalid-feedback">Please enter a Image!</div>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Category: <span class="required">*</span></label>
+            <select class="form-select" name="listing[category]" id="category">
+                <option value="">Select a category</option>
+                <option value="Haunted House" <% if (listings.category === 'Haunted House') { %> selected <% } %>>Haunted House</option>
+                <option value="Arctic" <% if (listings.category === 'Arctic') { %> selected <% } %>>Arctic</option>
+                <option value="Resorts" <% if (listings.category === 'Resorts') { %> selected <% } %>>Resorts</option>
+                <option value="Castles" <% if (listings.category === 'Castles') { %> selected <% } %>>Castles</option>
+                <option value="House-boats" <% if (listings.category === 'House-boats') { %> selected <% } %>>House-boats</option>
+                <option value="Dorms" <% if (listings.category === 'Dorms') { %> selected <% } %>>Dorms</option>
+                <option value="Mountain-View" <% if (listings.category === 'Mountain-View') { %> selected <% } %>>Mountain-View</option>
+                <option value="Camping" <% if (listings.category === 'Camping') { %> selected <% } %>>Camping</option>
+                <option value="Pools" <% if (listings.category === 'Pools') { %> selected <% } %>>Pools</option>
+                <option value="Palace" <% if (listings.category === 'Palace') { %> selected <% } %>>Palace</option>
+                <option value="Sea-view" <% if (listings.category === 'Sea-view') { %> selected <% } %>>Sea-view</option>
+                <option value="Villa" <% if (listings.category === 'Villa') { %> selected <% } %>>Villa</option>
+                <option value="Rooms" <% if (listings.category === 'Rooms') { %> selected <% } %>>Rooms</option>
+            </select>
+        </div>
+        
        <div class="row">
         <div class="mb-3 col-4">
             <label class="form-label"for="">Price: <span class="required">*</label>
