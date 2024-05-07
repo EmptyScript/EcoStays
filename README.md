@@ -16,10 +16,10 @@ Check out the [demo](https://ecostays.onrender.com/) to see EcoStays in action!
 
 ## Screenshots
 
-![Screenshot 1](![image](https://github.com/EmptyScript/EcoStays/assets/102405103/eeb81d3d-3501-48d6-ab1b-c3b65384453f)
-)
-![Screenshot 2](![image](https://github.com/EmptyScript/EcoStays/assets/102405103/8fcddb46-87e1-47d6-b33b-f6a5a82b5f40)
-)
+![Screenshot 2024-05-07 144342](https://github.com/EmptyScript/EcoStays/assets/102405103/a7d27a19-cdc0-485a-8691-c1e3bd88348b)
+
+![Screenshot 2024-05-07 154804](https://github.com/EmptyScript/EcoStays/assets/102405103/23a9e82f-8686-4d01-a869-5f2012188bec)
+
 
 ## Technologies Used
 
